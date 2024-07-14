@@ -1,0 +1,47 @@
+
+<table mat-table class="mat-elevation-z8" *ngIf="detalle.length>0">
+
+  <thead>
+    <tr>
+      <th mat-header-cell cdk-header-cell>Nombre</th>
+      <th mat-header-cell cdk-header-cell>Imagen</th>
+      <th mat-header-cell cdk-header-cell>Precio</th>
+      <th mat-header-cell cdk-header-cell>Total</th>
+      <th mat-header-cell cdk-header-cell></th>
+      <th mat-header-cell cdk-header-cell>Cantidad</th>
+      <th mat-header-cell cdk-header-cell></th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dato of detalle ">
+      <th class="tabla" scope="row">{{dato.nombre}}</th>
+      <th class="tabla" scope="row">
+        <img mat-card-image  cImg height="60"  [src]="dato | imgFaltanteCompras" [alt]="dato.nombre" thumbnail width="50">
+      </th>
+      <th class="tabla" scope="row">${{dato.precio}}</th>
+      <th class="tabla" scope="row">${{dato.total | number : '1.0-2'}}</th>
+
+      <th class="tabla" mat-header-cell> <button mat-button mat-raised color="accent" (click)="disminCantidadLibro(dato.id)"  [disabled]="bloqueo(dato.cantidad)">
+        <mat-icon>remove_circle</mat-icon>
+      </button></th>
+      <th class="tabla" scope="row">{{dato.cantidad}}</th>
+      <th mat-header-cell> <button mat-button mat-raised color="warn"  (click)="aumentarCantidad(dato.id)">
+        <mat-icon>add_box</mat-icon>
+      </button></th>
+
+      <th class="tabla" mat-header-cell> <button mat-button mat-raised color="warn" (click)="borrarLibro(dato.id)"  >
+        <mat-icon>delete_sweep</mat-icon>
+      </button></th>
+
+    </tr>
+  </tbody>
+
+  <div cdk-header-cell>Total de la Orden</div><div>{{totaldelaOrden | number : '1.0-2'}}</div>
+<div><button mat-button mat-raised color="warn"  (click)="enviarCompra()" >
+  <mat-icon>near_me</mat-icon> Comprar
+</button></div>
+</table>
+
+

@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+.el{
+
+  height: 1400px;
+
+  }
+
+
+.footer{
+  background: #667eea;
+}
+
+.footer_grid{
+
+  display: grid;
+  grid-template-columns:3fr 2fr ;
+  gap: 20px;
+  align-items: center;
+
+}
+
+.footer__title{
+
+  font-weight: 400;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.footer__container-icons{
+
+display: flex;
+justify-content: space-evenly;
+
+}
+
+
+.footer__icons{
+
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+
+.footer__container-icons{
+
+display: inline-block;
+width: 60px;
+height: 60px;
+color: #fff;
+text-align: center;
+border: 1px solid #fff;
+border-radius: 50%;
+}
+
+.footer__icons{
+  text-decoration: none;
+  color: inherit;
+  font-size: 30px;
+  line-height: 60px;
+
+}
+
+
+.fab.footer__icons{
+
+  line-height: 60px;
+}
+

@@ -1,0 +1,29 @@
+<h2 mat-dialog-title class="colorTex" >{{libro.categories}}</h2>
+
+
+<mat-dialog-content class="mat-typography m-2">
+  <h1 >{{libro.title}}</h1>
+
+  <mat-divider ></mat-divider>
+  <br>
+  <p>Descripción :
+    {{libro.description}}</p>
+  <p>Lenguaje: {{libro.language}}</p>
+  <br>
+  <mat-divider></mat-divider>
+  <h6>{{libro.publisher}}</h6>
+  <div class="col">
+    <div class="row">
+
+    </div>
+  </div>
+
+  <img mat-card-image class="box img " cImg height="900"  [src]="libro | imgFaltante" [alt]="libro.title" thumbnail width="600">
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="mr-4">
+  <button mat-raised-button mat-dialog-close   color="primary">Salir X </button>
+  <button mat-raised-button mat-dialog-close   color="warn" (click)="agregarCarrito()">Agregar al Carrito </button>
+
+</mat-dialog-actions>

@@ -1,0 +1,32 @@
+<mat-card class="box">
+  <mat-card-header>
+    <mat-card-title>{{libros.title}}</mat-card-title>
+
+  </mat-card-header>
+  <img mat-card-image [src]="libros | imgFaltante" [alt]="libros.title">
+  <mat-card-content class="mt-2">
+    <h4></h4>
+
+      <mat-card-subtitle>{{libros.publisher}}</mat-card-subtitle>
+
+
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button mat-raised color="warn" [routerLink]="['/biblioteca/edit', libros.id]" >
+      <mat-icon>edit</mat-icon>
+      Editar
+    </button>
+
+    <span class="spacer"></span>
+
+    <button mat-button mat-raised  [routerLink]="['/biblioteca', libros.id]" >
+      <mat-icon>more_horiz</mat-icon>
+      Más
+    </button>
+
+
+
+
+  </mat-card-actions>
+</mat-card>

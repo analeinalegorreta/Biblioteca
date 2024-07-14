@@ -1,0 +1,98 @@
+<h1>
+  <small>NUEVO LIBRO</small>
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid">
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <mat-card-content>
+        <form class="grid" [formGroup]="libroForm" (ngSubmit)="onsubmit()">
+          <div class="col-12 ">
+            <mat-card>
+              <mat-card-content>
+                <div class="grid">
+                  <mat-form-field class="col-12 sm:col-6">
+                    <mat-label>Titulo :</mat-label>
+                    <input type="text" required matInput formControlName="titulo">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-12 sm:col-6">
+                    <mat-label>Publisher :</mat-label>
+                    <input type="text" required matInput formControlName="publisher">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-12">
+                    <mat-label>Lenguaje</mat-label>
+                    <mat-select required="" formControlName="lenguaje">
+                      <mat-option *ngFor="let lenguaje of quieras" [value]=lenguaje.valor>
+                        {{lenguaje.texto}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+
+                  <mat-form-field class="col-12">
+                    <mat-label>Descripción</mat-label>
+                    <input type="text" required matInput formControlName="descripcion">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-12">
+                    <mat-label>N° Paginas</mat-label>
+                    <input type="text" required matInput formControlName="nPaginas">
+                  </mat-form-field>
+
+
+                  <mat-form-field class="col-12">
+                    <mat-label>Categoria </mat-label>
+                    <input type="text" required matInput formControlName="categoria">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-12">
+                    <mat-label>Autor </mat-label>
+                    <input type="text" required matInput formControlName="autor">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-12">
+                    <mat-label>Fecha de Publicación </mat-label>
+                    <input type="text" required matInput formControlName="fPublicacion">
+                  </mat-form-field>
+
+                  <button type="button" mat-raised-button (click)="fileInput.click()">Imagen</button>
+                  <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+                  <span class="file-name">{{selectedFile?.name}}</span>
+
+
+
+                </div>
+
+                <div class="flex justify-content-between mt-5">
+
+
+                  <button mat-flat-button color="primary" type="submit">
+                    <mat-icon>save</mat-icon>
+                    Guardar
+                  </button>
+
+                </div>
+
+
+
+
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+
+        </form>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+  <div class="col-12 sm:col-6">
+
+  </div>
+</div>

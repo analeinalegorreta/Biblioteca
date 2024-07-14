@@ -1,0 +1,58 @@
+<h1 class="mt-3">Selectores Anidados</h1>
+<hr>
+<form [formGroup]="myForm">
+
+  <div class="row mb-3">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Isbn</mat-label>
+        <mat-select formControlName="isbn" class="form-control">
+          <mat-option *ngFor="let isbn of isbns" [value]="isbn">{{isbn}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row mb-3" *ngIf="categorias.length>0">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Categories</mat-label>
+        <mat-select formControlName="categoria" class="form-control">
+          <mat-option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+
+
+  <table mat-table class="mat-elevation-z8" *ngIf="libros.length>0">
+
+    <thead>
+      <tr>
+        <th mat-header-cell>Title</th>
+        <th mat-header-cell>Publisher</th>
+        <th mat-header-cell>Year</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of libros ">
+        <th scope="row">{{dato.title}}</th>
+
+        <th scope="row">{{dato.publisher}}</th>
+
+        <th scope="row">{{dato.year}}</th>
+      </tr>
+    </tbody>
+
+
+
+  </table>
+
+
+
+</form>

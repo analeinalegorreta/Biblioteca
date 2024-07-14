@@ -1,0 +1,9 @@
+<h1>Libros disponibles en la Biblioteca Virtual</h1>
+<mat-divider></mat-divider>
+<div class="grid bm-8 pt-2">
+  <div *ngFor="let libros of libros" class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <libro-card [libros]="libros"></libro-card>
+
+  </div>
+  </div>
+
